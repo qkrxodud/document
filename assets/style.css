@@ -948,6 +948,73 @@ button { font-family: inherit; cursor: pointer; }
 .next-steps strong { display: block; margin-bottom: 8px; color: var(--ink); }
 .next-steps ol { padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
 
+/* ---------- 모바일 ---------- */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-scroll .cost-table { min-width: 560px; }
+
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+
+  .trust-bar { font-size: 11.5px; padding: 8px 14px; line-height: 1.5; }
+
+  .site-header .container { height: 60px; }
+  .brand { font-size: 17px; }
+  .header-nav { gap: 14px; }
+  .header-nav a:not(.btn) { display: none; }
+
+  .section { padding: 60px 0; }
+  .section.navy { padding: 68px 0; }
+  .section-head { margin-bottom: 36px; }
+  .section-head p { font-size: 15.5px; }
+
+  .hero { padding: 56px 0 0; }
+  .hero p.lead { margin-bottom: 32px; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; max-width: 340px; }
+
+  .doc-mockup { margin-top: 44px; }
+  .doc-mockup .m-title { letter-spacing: 7px; text-indent: 7px; font-size: 22px; }
+  .doc-mockup .m-subject { letter-spacing: 2px; font-size: 15px; }
+  .doc-mockup .m-stamp { width: 48px; height: 48px; font-size: 18px; bottom: 24px; right: 24px; }
+
+  .grid { gap: 14px; }
+  .card { padding: 28px 24px; }
+  .case-card { padding: 26px 24px; }
+  .case-card p { margin-bottom: 16px; }
+
+  .guide-item { padding: 24px 20px; gap: 14px; }
+  .guide-item strong { font-size: 15.5px; }
+
+  .faq-list { padding: 4px 20px; }
+  .faq-list summary { font-size: 15px; padding: 20px 0; }
+  .faq-list .faq-body { font-size: 14px; padding-bottom: 22px; }
+
+  .cost-table th, .cost-table td { padding: 12px 14px; font-size: 13.5px; }
+  .cost-table .note { font-size: 12.5px; }
+
+  .footer-links { gap: 16px 20px; }
+  .site-footer { padding: 40px 0 36px; }
+}
+
+@media (max-width: 480px) {
+  .wizard-wrap { padding: 28px 16px 64px; }
+
+  .progress { margin-bottom: 28px; }
+  .progress .p-dot { width: 26px; height: 26px; font-size: 12px; }
+  .progress .p-bar { width: 14px; margin: 0 5px; }
+  .progress .p-step { gap: 6px; font-size: 12px; }
+
+  .panel h2 { font-size: 20px; }
+
+  .preview-toolbar { flex-direction: column; }
+  .preview-toolbar .btn { width: 100%; }
+
+  .wizard-nav { flex-wrap: wrap; }
+  .wizard-nav .btn { flex: 1; white-space: nowrap; }
+
+  .btn-lg { padding: 15px 28px; font-size: 15px; }
+}
+
 /* ---------- 인쇄 ---------- */
 @media print {
   body { background: #fff; }
