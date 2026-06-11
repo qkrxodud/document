@@ -667,6 +667,51 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ============================================
+   에러 페이지 (404.html)
+   ============================================ */
+.error-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 110px 24px 130px;
+  text-align: center;
+}
+
+.error-code {
+  font-family: var(--font-doc);
+  font-size: clamp(72px, 12vw, 110px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  margin-bottom: 22px;
+}
+
+.error-wrap h1 {
+  font-family: var(--font-doc);
+  font-size: clamp(24px, 3.6vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.error-desc {
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.error-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.error-help { font-size: 14px; color: var(--ink-mute); }
+.error-help a { color: var(--accent-deep); text-decoration: underline; }
+
+/* ============================================
    마법사 (write.html)
    ============================================ */
 .wizard-wrap {
