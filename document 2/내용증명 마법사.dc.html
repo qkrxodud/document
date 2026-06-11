@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;-webkit-font-smoothing:antialiased;}
+</style>
+</helmet>
+
+<div style="background:#FAF6EF;font-family:'Pretendard Variable',Pretendard,system-ui,sans-serif;color:#102A43;overflow-x:hidden;">
+
+  <!-- ===== top trust bar ===== -->
+  <div style="background:#102A43;color:#D6DEE8;font-size:13px;text-align:center;padding:9px 20px;letter-spacing:.01em;">
+    입력 내용이 서버로 전송되지 않습니다 — 100% 브라우저에서만 처리됩니다
+  </div>
+
+  <!-- ===== nav ===== -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(250,246,239,.86);backdrop-filter:blur(12px);border-bottom:1px solid rgba(16,42,67,.08);">
+    <div style="max-width:1120px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="#top" style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:20px;color:#102A43;text-decoration:none;white-space:nowrap;letter-spacing:-.01em;">내용증명 마법사</a>
+      <nav style="display:flex;align-items:center;gap:34px;">
+        <a href="#how" style="font-size:14.5px;color:#52606D;text-decoration:none;font-weight:500;">이용 방법</a>
+        <a href="#cases" style="font-size:14.5px;color:#52606D;text-decoration:none;font-weight:500;">작성 사유</a>
+        <a href="#cost" style="font-size:14.5px;color:#52606D;text-decoration:none;font-weight:500;">발송 비용</a>
+        <a href="#faq" style="font-size:14.5px;color:#52606D;text-decoration:none;font-weight:500;">자주 묻는 질문</a>
+        <a href="https://qkrxodud.github.io/document/write.html" style="padding:10px 22px;background:#102A43;color:#fff;font-size:14px;font-weight:600;border-radius:100px;text-decoration:none;white-space:nowrap;" style-hover="background:#0C2236;">작성 시작</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== hero ===== -->
+  <section id="top" style="position:relative;padding:96px 32px 0;text-align:center;">
+    <div style="max-width:880px;margin:0 auto;">
+      <div style="font-size:14px;color:#A86F3D;font-weight:600;margin-bottom:26px;letter-spacing:.01em;">절박한 순간일수록, 첫 대응이 빨라야 합니다</div>
+      <h1 style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:60px;line-height:1.28;color:#102A43;margin:0 auto 30px;letter-spacing:-.025em;max-width:740px;">막막한 내용증명,<br>이제 혼자가 아닙니다</h1>
+      <p style="font-size:19px;line-height:1.8;color:#52606D;margin:0 auto 42px;max-width:560px;">전세보증금·중고거래 사기·빌려준 돈·임금체불. 어떤 상황이든, 질문 몇 개에 답하면 격식을 갖춘 문서가 완성됩니다. 가입도 결제도 필요 없습니다.</p>
+      <div style="display:flex;gap:14px;align-items:center;justify-content:center;margin-bottom:24px;flex-wrap:wrap;">
+        <a href="https://qkrxodud.github.io/document/write.html" style="padding:17px 36px;background:#102A43;color:#fff;font-size:16px;font-weight:600;border-radius:100px;text-decoration:none;box-shadow:0 14px 30px rgba(16,42,67,.22);" style-hover="background:#0C2236;">무료로 작성 시작하기</a>
+        <a href="#how" style="padding:17px 28px;color:#102A43;font-size:16px;font-weight:600;text-decoration:none;">어떻게 동작하나요 →</a>
+      </div>
+      <div style="font-size:13.5px;color:#8A95A1;">평균 작성 3분 · 회원가입 없음 · 완전 무료</div>
+    </div>
+
+    <!-- document mockup -->
+    <div style="max-width:580px;margin:64px auto 0;position:relative;">
+      <div style="position:absolute;inset:-40px -40px 0;background:radial-gradient(60% 50% at 50% 30%,rgba(168,111,61,.10),transparent 70%);pointer-events:none;"></div>
+      <div style="position:relative;background:#fff;border:1px solid rgba(16,42,67,.12);box-shadow:0 40px 80px rgba(16,42,67,.16);border-radius:8px 8px 0 0;padding:48px 52px 64px;text-align:left;">
+        <div style="text-align:center;font-family:'Noto Serif KR',serif;font-weight:700;font-size:26px;letter-spacing:12px;color:#102A43;border-bottom:2px solid #102A43;padding-bottom:18px;margin-bottom:28px;">내 용 증 명</div>
+        <div style="display:flex;flex-direction:column;gap:13px;margin-bottom:28px;">
+          <div style="display:flex;gap:12px;align-items:center;"><span style="font-size:12.5px;color:#9AA3AE;width:52px;flex-shrink:0;">수신인</span><div style="height:10px;background:#ECEEF1;border-radius:2px;flex:1;"></div></div>
+          <div style="display:flex;gap:12px;align-items:center;"><span style="font-size:12.5px;color:#9AA3AE;width:52px;flex-shrink:0;">발신인</span><div style="height:10px;background:#ECEEF1;border-radius:2px;flex:1;"></div></div>
+        </div>
+        <div style="text-align:center;font-family:'Noto Serif KR',serif;font-weight:600;font-size:17px;color:#1F3A5F;margin-bottom:26px;letter-spacing:3px;">전세보증금 반환 청구</div>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <div style="height:9px;background:#F1F2F5;border-radius:2px;width:100%;"></div>
+          <div style="height:9px;background:#F1F2F5;border-radius:2px;width:97%;"></div>
+          <div style="height:9px;background:#F1F2F5;border-radius:2px;width:100%;"></div>
+          <div style="height:9px;background:#F1F2F5;border-radius:2px;width:90%;"></div>
+          <div style="height:9px;background:#F1F2F5;border-radius:2px;width:95%;"></div>
+        </div>
+        <div style="position:absolute;bottom:38px;right:46px;width:60px;height:60px;border:2px solid #C0392B;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#C0392B;font-family:'Noto Serif KR',serif;font-weight:700;font-size:22px;transform:rotate(-7deg);opacity:.85;">印</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== how it works ===== -->
+  <section id="how" style="padding:88px 32px;">
+    <div style="max-width:1120px;margin:0 auto;">
+      <div style="text-align:center;max-width:680px;margin:0 auto 60px;">
+        <div style="font-family:ui-monospace,monospace;font-size:12px;letter-spacing:3px;color:#A86F3D;margin-bottom:18px;">HOW IT WORKS</div>
+        <h2 style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:40px;line-height:1.35;color:#102A43;margin:0 0 16px;letter-spacing:-.02em;">딱 3단계면 충분합니다</h2>
+        <p style="font-size:17px;line-height:1.7;color:#52606D;margin:0;">양식 파일을 받아 2시간씩 고치던 일을, 3분으로 줄였습니다.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div style="background:#fff;border:1px solid rgba(16,42,67,.08);border-radius:16px;padding:40px 32px;">
+          <div style="font-family:'Noto Serif KR',serif;font-size:28px;font-weight:700;color:#A86F3D;margin-bottom:22px;">01</div>
+          <div style="font-size:19px;font-weight:700;color:#102A43;margin-bottom:12px;">상황 선택</div>
+          <div style="font-size:14.5px;line-height:1.75;color:#52606D;">전세보증금 반환, 중고거래 사기 등 6가지 상황 중 내 경우를 고르세요. 상황별로 꼭 필요한 질문만 묻습니다.</div>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(16,42,67,.08);border-radius:16px;padding:40px 32px;">
+          <div style="font-family:'Noto Serif KR',serif;font-size:28px;font-weight:700;color:#A86F3D;margin-bottom:22px;">02</div>
+          <div style="font-size:19px;font-weight:700;color:#102A43;margin-bottom:12px;">빈칸 채우기</div>
+          <div style="font-size:14.5px;line-height:1.75;color:#52606D;">이름·주소·금액·기한 등 빈칸만 채우면 법적 표현과 관련 법조문이 포함된 본문이 자동으로 작성됩니다.</div>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(16,42,67,.08);border-radius:16px;padding:40px 32px;">
+          <div style="font-family:'Noto Serif KR',serif;font-size:28px;font-weight:700;color:#A86F3D;margin-bottom:22px;">03</div>
+          <div style="font-size:19px;font-weight:700;color:#102A43;margin-bottom:12px;">PDF 저장 · 발송</div>
+          <div style="font-size:14.5px;line-height:1.75;color:#52606D;">완성된 문서를 PDF로 저장하거나, 전문을 복사해 인터넷우체국에 붙여넣으세요. 발송 방법도 친절히 안내합니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== templates / cases ===== -->
+  <section id="cases" style="padding:88px 32px;background:#F3ECE0;">
+    <div style="max-width:1120px;margin:0 auto;">
+      <div style="text-align:center;max-width:680px;margin:0 auto 60px;">
+        <div style="font-family:ui-monospace,monospace;font-size:12px;letter-spacing:3px;color:#A86F3D;margin-bottom:18px;">TEMPLATES</div>
+        <h2 style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:40px;line-height:1.35;color:#102A43;margin:0 0 16px;letter-spacing:-.02em;">이런 상황에서 바로 쓸 수 있어요</h2>
+        <p style="font-size:17px;line-height:1.7;color:#52606D;margin:0;">각 상황에 맞는 법적 문구와 관련 법조문이 자동으로 들어갑니다.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+
+        <a href="https://qkrxodud.github.io/document/write.html#jeonse" style="text-decoration:none;background:#fff;border:1px solid rgba(16,42,67,.08);border-radius:16px;padding:32px 30px;display:block;transition:transform .18s ease,box-shadow .18s ease;" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px rgba(16,42,67,.12);">
+          <div style="font-size:11px;letter-spacing:2px;color:#A86F3D;font-weight:700;margin-bottom:18px;">주거</div>
+          <div style="font-size:19px;font-weight:700;color:#102A43;margin-bottom:12px;">전세보증금 반환</div>
+          <div style="font-size:14px;line-height:1.7;color:#52606D;margin-bottom:22px;">계약이 끝났는데 보증금을 돌려주지 않을 때, 전세사기가 의심될 때 가장 먼저 해야 할 일입니다.</div>
+          <div style="font-size:14px;font-weight:600;color:#102A43;">내용증명 작성 →</div>
+        </a>
+
+        <a href="https://qkrxodud.github.io/document/write.html#fraud" style="text-decoration:none;background:#fff;border:1px solid rgba(16,42,67,.08);border-radius:16px;padding:32px 30px;display:block;transition:transform .18s ease,box-shadow .18s ease;" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px rgba(16,42,67,.12);">
+          <div style="font-size:11px;letter-spacing:2px;color:#A86F3D;font-weight:700;margin-bottom:18px;">거래</div>
+          <div style="font-size:19px;font-weight:700;color:#102A43;margin-bottom:12px;">중고거래 사기</div>
+          <div style="font-size:14px;line-height:1.7;color:#52606D;margin-bottom:22px;">당근·중고나라에서 돈만 보내고 물건을 못 받았을 때. 형사 고소 전 단계의 공식 경고장입니다.</div>
+          <div style="font-size:14px;font-weight:600;color:#102A43;">내용증명 작성 →</div>
+        </a>
+
+        <a href="https://qkrxodud.github.io/document/write.html#loan" style="text-decoration:none;background:#fff;border:1px solid rgba(16,42,67,.08);border-radius:16px;padding:32px 30px;display:block;transition:transform .18s ease,box-shadow .18s ease;" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px rgba(16,42,67,.12);">
+          <div style="font-size:11px;letter-spacing:2px;color:#A86F3D;font-weight:700;margin-bottom:18px;">금전</div>
+          <div style="font-size:19px;font-weight:700;color:#102A43;margin-bottom:12px;">빌려준 돈 청구</div>
+          <div style="font-size:14px;line-height:1.7;color:#52606D;margin-bottom:22px;">지인에게 빌려준 돈을 차일피일 미루며 갚지 않을 때, 변제를 공식적으로 최고(催告)합니다.</div>
+          <div style="font-size:14px;font-weight:600;color:#102A43;">내용증명 작성 →</div>
+        </a>
+
+        <a href="https://qkrxodud.github.io/document/write.html#terminate" style="text-decoration:none;background:#fff;border:1px solid rgba(16,42,67,.08);border-radius:16px;padding:32px 30px;display:block;transition:transform .18s ease,box-shadow .18s ease;" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px rgba(16,42,67,.12);">
+          <div style="font-size:11px;letter-spacing:2px;color:#A86F3D;font-weight:700;margin-bottom:18px;">계약</div>
+          <div style="font-size:19px;font-weight:700;color:#102A43;margin-bottom:12px;">계약 해지 통지</div>
+          <div style="font-size:14px;line-height:1.7;color:#52606D;margin-bottom:22px;">공사 지연, 서비스 불이행 등으로 계약을 해지하고 이미 낸 돈의 정산을 요구할 때 사용합니다.</div>
+          <div style="font-size:14px;font-weight:600;color:#102A43;">내용증명 작성 →</div>
+        </a>
+
+        <a href="https://qkrxodud.github.io/document/write.html#noise" style="text-decoration:none;background:#fff;border:1px solid rgba(16,42,67,.08);border-radius:16px;padding:32px 30px;display:block;transition:transform .18s ease,box-shadow .18s ease;" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px rgba(16,42,67,.12);">
+          <div style="font-size:11px;letter-spacing:2px;color:#A86F3D;font-weight:700;margin-bottom:18px;">생활</div>
+          <div style="font-size:19px;font-weight:700;color:#102A43;margin-bottom:12px;">층간소음 자제 요청</div>
+          <div style="font-size:14px;line-height:1.7;color:#52606D;margin-bottom:22px;">반복되는 층간소음 피해를 공식 기록으로 남기고, 분쟁조정 전 단계로 자제를 요청합니다.</div>
+          <div style="font-size:14px;font-weight:600;color:#102A43;">내용증명 작성 →</div>
+        </a>
+
+        <a href="https://qkrxodud.github.io/document/write.html#wage" style="text-decoration:none;background:#fff;border:1px solid rgba(16,42,67,.08);border-radius:16px;padding:32px 30px;display:block;transition:transform .18s ease,box-shadow .18s ease;" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px rgba(16,42,67,.12);">
+          <div style="font-size:11px;letter-spacing:2px;color:#A86F3D;font-weight:700;margin-bottom:18px;">노동</div>
+          <div style="font-size:19px;font-weight:700;color:#102A43;margin-bottom:12px;">임금(급여) 체불</div>
+          <div style="font-size:14px;line-height:1.7;color:#52606D;margin-bottom:22px;">밀린 월급·퇴직금을 받지 못했을 때, 노동청 진정 전에 지급을 공식 청구합니다.</div>
+          <div style="font-size:14px;font-weight:600;color:#102A43;">내용증명 작성 →</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== privacy band (navy) ===== -->
+  <section style="padding:96px 32px;background:#102A43;">
+    <div style="max-width:760px;margin:0 auto;text-align:center;">
+      <div style="font-family:ui-monospace,monospace;font-size:12px;letter-spacing:3px;color:#C8A45C;margin-bottom:24px;">PRIVACY BY DESIGN</div>
+      <h2 style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:38px;line-height:1.4;color:#fff;margin:0 0 24px;letter-spacing:-.02em;">민감한 분쟁 정보,<br>어디에도 저장되지 않습니다</h2>
+      <p style="font-size:17px;line-height:1.85;color:#A9B7CF;margin:0 0 40px;">이 도구는 서버 없이 동작하는 정적 웹페이지입니다. 입력하신 이름·주소·금액·사건 내용은 여러분의 브라우저 안에서만 처리되며 네트워크로 전송되지 않습니다. 개발자도, 그 누구도 볼 수 없습니다.</p>
+      <a href="https://qkrxodud.github.io/document/write.html" style="display:inline-block;padding:16px 34px;background:#fff;color:#102A43;font-size:15px;font-weight:600;border-radius:100px;text-decoration:none;" style-hover="background:#F3ECE0;">안심하고 작성하기</a>
+    </div>
+  </section>
+
+  <!-- ===== guide : what is 내용증명 ===== -->
+  <section style="padding:88px 32px;">
+    <div style="max-width:1120px;margin:0 auto;">
+      <div style="text-align:center;max-width:680px;margin:0 auto 60px;">
+        <div style="font-family:ui-monospace,monospace;font-size:12px;letter-spacing:3px;color:#A86F3D;margin-bottom:18px;">GUIDE</div>
+        <h2 style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:40px;line-height:1.35;color:#102A43;margin:0 0 16px;letter-spacing:-.02em;">내용증명, 정확히 뭔가요?</h2>
+        <p style="font-size:17px;line-height:1.7;color:#52606D;margin:0;">보내기 전에 꼭 알아두면 좋은 세 가지.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div style="border-top:2px solid #102A43;padding:28px 6px 0;">
+          <div style="font-size:18px;font-weight:700;color:#102A43;margin-bottom:14px;">공적 증거가 되는 우편</div>
+          <div style="font-size:14.5px;line-height:1.8;color:#52606D;">“언제, 누가, 누구에게, 어떤 내용의 문서를 보냈다”는 사실을 우체국이 공적으로 증명해 주는 제도입니다. 우체국이 등본을 3년간 보관합니다.</div>
+        </div>
+        <div style="border-top:2px solid #102A43;padding:28px 6px 0;">
+          <div style="font-size:18px;font-weight:700;color:#102A43;margin-bottom:14px;">그 자체로 강제력은 없지만</div>
+          <div style="font-size:14.5px;line-height:1.8;color:#52606D;">내용증명 자체에 법적 강제력은 없습니다. 하지만 의사표시 도달의 증거, 소멸시효 중단(최고), 계약 해지 통보 등 이후 법적 절차에서 결정적 역할을 합니다.</div>
+        </div>
+        <div style="border-top:2px solid #102A43;padding:28px 6px 0;">
+          <div style="font-size:18px;font-weight:700;color:#102A43;margin-bottom:14px;">심리적 압박 효과</div>
+          <div style="font-size:14.5px;line-height:1.8;color:#52606D;">“법적 절차를 준비하고 있다”는 공식 신호이기 때문에, 내용증명만으로 상대방이 태도를 바꿔 분쟁이 해결되는 경우가 실제로 매우 많습니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== postage cost ===== -->
+  <section id="cost" style="padding:88px 32px;background:#F3ECE0;">
+    <div style="max-width:840px;margin:0 auto;">
+      <div style="text-align:center;max-width:680px;margin:0 auto 52px;">
+        <div style="font-family:ui-monospace,monospace;font-size:12px;letter-spacing:3px;color:#A86F3D;margin-bottom:18px;">POSTAGE</div>
+        <h2 style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:40px;line-height:1.35;color:#102A43;margin:0 0 16px;letter-spacing:-.02em;">우체국 발송 비용 안내</h2>
+        <p style="font-size:16px;line-height:1.7;color:#52606D;margin:0;">내용증명은 등기우편으로만 발송할 수 있습니다. (2025년 기준, 변동될 수 있음)</p>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(16,42,67,.1);border-radius:16px;overflow:hidden;">
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1.6fr;background:#102A43;color:#fff;font-size:13.5px;font-weight:600;">
+          <div style="padding:16px 24px;">항목</div>
+          <div style="padding:16px 24px;">비용</div>
+          <div style="padding:16px 24px;">비고</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1.6fr;border-bottom:1px solid rgba(16,42,67,.07);font-size:14.5px;">
+          <div style="padding:16px 24px;color:#102A43;">내용증명 수수료 (첫 장)</div>
+          <div style="padding:16px 24px;color:#102A43;font-weight:600;">1,300원</div>
+          <div style="padding:16px 24px;color:#52606D;">2장째부터 장당 650원 추가</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1.6fr;border-bottom:1px solid rgba(16,42,67,.07);font-size:14.5px;background:#FBF8F2;">
+          <div style="padding:16px 24px;color:#102A43;">등기 수수료</div>
+          <div style="padding:16px 24px;color:#102A43;font-weight:600;">2,100원</div>
+          <div style="padding:16px 24px;color:#52606D;">내용증명은 등기 필수</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1.6fr;border-bottom:1px solid rgba(16,42,67,.07);font-size:14.5px;">
+          <div style="padding:16px 24px;color:#102A43;">일반 우편요금</div>
+          <div style="padding:16px 24px;color:#102A43;font-weight:600;">430원~</div>
+          <div style="padding:16px 24px;color:#52606D;">중량에 따라 다름</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1.6fr;border-bottom:1px solid rgba(16,42,67,.07);font-size:14.5px;background:#FBF8F2;">
+          <div style="padding:16px 24px;color:#102A43;">배달증명 (선택)</div>
+          <div style="padding:16px 24px;color:#102A43;font-weight:600;">1,600원</div>
+          <div style="padding:16px 24px;color:#52606D;">상대방 수령 사실까지 증명, 강력 추천</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1.6fr;font-size:15px;background:#F3ECE0;">
+          <div style="padding:18px 24px;color:#102A43;font-weight:700;">예상 합계</div>
+          <div style="padding:18px 24px;color:#A86F3D;font-weight:700;">약 4,000~5,500원</div>
+          <div style="padding:18px 24px;color:#52606D;">1~2장 기준</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== how to send ===== -->
+  <section style="padding:88px 32px;">
+    <div style="max-width:1000px;margin:0 auto;">
+      <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
+        <div style="font-family:ui-monospace,monospace;font-size:12px;letter-spacing:3px;color:#A86F3D;margin-bottom:18px;">HOW TO SEND</div>
+        <h2 style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:40px;line-height:1.35;color:#102A43;margin:0 0 16px;letter-spacing:-.02em;">완성한 문서, 이렇게 발송하세요</h2>
+        <p style="font-size:17px;line-height:1.7;color:#52606D;margin:0;">우체국 방문과 인터넷우체국, 두 가지 방법이 있습니다.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div style="background:#fff;border:1px solid rgba(16,42,67,.08);border-radius:16px;padding:34px 32px;">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+            <span style="font-family:'Noto Serif KR',serif;font-size:20px;font-weight:700;color:#A86F3D;">①</span>
+            <span style="font-size:18px;font-weight:700;color:#102A43;">우체국 방문 — 같은 문서 3부</span>
+          </div>
+          <div style="font-size:14.5px;line-height:1.8;color:#52606D;">완성된 PDF를 3부 인쇄해 창구에 제출하세요. 상대방 발송용·우체국 보관용(3년)·본인 보관용입니다. 봉투에는 문서와 동일한 발신인·수신인 주소를 적습니다.</div>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(16,42,67,.08);border-radius:16px;padding:34px 32px;">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+            <span style="font-family:'Noto Serif KR',serif;font-size:20px;font-weight:700;color:#A86F3D;">②</span>
+            <span style="font-size:18px;font-weight:700;color:#102A43;">인터넷우체국 — 집에서 바로</span>
+          </div>
+          <div style="font-size:14.5px;line-height:1.8;color:#52606D;">epost.go.kr 로그인 → 증명서비스 → 내용증명에서 본문을 붙여넣으면 우체국이 대신 인쇄·발송해 줍니다. “전문 복사” 버튼으로 붙여넣기용 텍스트를 복사하세요.</div>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(16,42,67,.08);border-radius:16px;padding:34px 32px;">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+            <span style="font-family:'Noto Serif KR',serif;font-size:20px;font-weight:700;color:#A86F3D;">③</span>
+            <span style="font-size:18px;font-weight:700;color:#102A43;">배달증명을 함께 신청</span>
+          </div>
+          <div style="font-size:14.5px;line-height:1.8;color:#52606D;">1,600원을 추가하면 상대방이 “언제 수령했는지”까지 증명됩니다. 계약 해지 통보처럼 도달 시점이 중요할 때 필수이며, 등기번호로 배달 조회도 가능합니다.</div>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(16,42,67,.08);border-radius:16px;padding:34px 32px;">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+            <span style="font-family:'Noto Serif KR',serif;font-size:20px;font-weight:700;color:#A86F3D;">④</span>
+            <span style="font-size:18px;font-weight:700;color:#102A43;">영수증과 등본은 꼭 보관</span>
+          </div>
+          <div style="font-size:14.5px;line-height:1.8;color:#52606D;">이후 소송이나 지급명령 신청 시 핵심 증거가 됩니다. 우체국 보관 기간(3년)이 지나기 전에는 등본 재발급도 가능합니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" style="padding:88px 32px;background:#F3ECE0;">
+    <div style="max-width:820px;margin:0 auto;">
+      <div style="text-align:center;margin:0 auto 52px;">
+        <div style="font-family:ui-monospace,monospace;font-size:12px;letter-spacing:3px;color:#A86F3D;margin-bottom:18px;">FAQ</div>
+        <h2 style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:40px;line-height:1.35;color:#102A43;margin:0;letter-spacing:-.02em;">자주 묻는 질문</h2>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(16,42,67,.1);border-radius:16px;padding:8px 32px;">
+        <sc-for list="{{ faqs }}" as="item" hint-placeholder-count="6">
+          <div style="border-bottom:1px solid rgba(16,42,67,.08);">
+            <div onClick="{{ item.toggle }}" style="display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;cursor:pointer;">
+              <span style="font-size:17px;font-weight:600;color:#102A43;line-height:1.5;">{{ item.q }}</span>
+              <span style="font-size:24px;font-weight:300;color:#A86F3D;flex-shrink:0;transition:transform .2s ease;transform: {{ item.icon }};">+</span>
+            </div>
+            <sc-if value="{{ item.open }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:0 0 28px;font-size:15px;line-height:1.85;color:#52606D;max-width:720px;">{{ item.a }}</div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== final CTA ===== -->
+  <section style="padding:104px 32px;background:#102A43;text-align:center;">
+    <div style="max-width:680px;margin:0 auto;">
+      <h2 style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:46px;line-height:1.35;color:#fff;margin:0 0 20px;letter-spacing:-.02em;">지금 바로 시작하세요</h2>
+      <p style="font-size:18px;line-height:1.7;color:#A9B7CF;margin:0 0 40px;">절박한 순간일수록, 첫 대응이 빨라야 합니다.</p>
+      <a href="https://qkrxodud.github.io/document/write.html" style="display:inline-block;padding:18px 40px;background:#fff;color:#102A43;font-size:16px;font-weight:700;border-radius:100px;text-decoration:none;box-shadow:0 16px 36px rgba(0,0,0,.28);" style-hover="background:#F3ECE0;">내용증명 작성하기 →</a>
+    </div>
+  </section>
+
+  <!-- ===== footer ===== -->
+  <footer style="background:#0C2236;padding:56px 32px 48px;">
+    <div style="max-width:1120px;margin:0 auto;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;margin-bottom:40px;">
+        <div>
+          <div style="font-family:'Noto Serif KR',serif;font-weight:700;font-size:19px;color:#fff;margin-bottom:12px;">내용증명 마법사</div>
+          <div style="font-size:13.5px;color:#7E8DA6;line-height:1.7;max-width:320px;">질문 몇 개에 답하면 내용증명 PDF가 완성됩니다.<br>입력 내용은 서버로 전송되지 않습니다.</div>
+        </div>
+        <nav style="display:flex;gap:28px;flex-wrap:wrap;">
+          <a href="https://qkrxodud.github.io/document/about.html" style="font-size:14px;color:#A9B7CF;text-decoration:none;">서비스 소개</a>
+          <a href="https://qkrxodud.github.io/document/terms.html" style="font-size:14px;color:#A9B7CF;text-decoration:none;">이용약관</a>
+          <a href="https://qkrxodud.github.io/document/privacy.html" style="font-size:14px;color:#A9B7CF;text-decoration:none;">개인정보처리방침</a>
+          <a href="https://qkrxodud.github.io/document/contact.html" style="font-size:14px;color:#A9B7CF;text-decoration:none;">문의하기</a>
+        </nav>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:28px;">
+        <div style="font-size:12.5px;line-height:1.8;color:#6B7A94;margin-bottom:16px;">본 서비스가 제공하는 문서는 <strong style="color:#9FB0C9;">법률 자문이 아닌 참고용 양식</strong>입니다. 구체적인 사안에 대한 법적 판단은 변호사 등 전문가와 상담하시기 바랍니다. 본 서비스 이용으로 발생하는 결과에 대해 운영자는 법적 책임을 지지 않습니다.</div>
+        <div style="font-size:12.5px;color:#54637D;">© 2026 내용증명 작성 마법사 · 입력 데이터는 서버로 전송되지 않습니다.</div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { open: 0 };
+
+  faqData = [
+    { q: "내용증명에 정해진 양식이 있나요?",
+      a: "아니요, 법으로 정해진 양식은 없습니다. 발신인·수신인의 이름과 주소, 제목, 전달하려는 내용, 날짜, 서명이 들어가면 충분합니다. 이 도구는 실무에서 통용되는 격식과 문구를 자동으로 갖춰 드립니다." },
+    { q: "내용증명을 보내면 바로 법적 효력이 생기나요?",
+      a: "내용증명 자체는 강제력이 없습니다. 다만 ① 의사표시(계약 해지, 변제 최고 등)가 상대방에게 도달했다는 증거가 되고, ② 최고 후 6개월 내 재판상 청구를 하면 소멸시효 중단 효과가 유지되며, ③ 이후 소송에서 중요한 증거자료가 됩니다." },
+    { q: "상대방이 수령을 거부하면 어떻게 되나요?",
+      a: "수령 거부나 폐문부재로 반송되더라도 “보냈다는 사실” 자체는 증명됩니다. 판례상 상대방이 내용을 알 수 있는 객관적 상태에 놓이면 도달로 인정되는 경우가 많습니다. 반송된 봉투는 뜯지 말고 그대로 보관하세요." },
+    { q: "입력한 개인정보는 안전한가요?",
+      a: "네. 이 사이트는 서버가 없는 정적 페이지로, 입력하신 모든 내용은 브라우저 안에서만 처리됩니다. 어떤 데이터도 외부로 전송되거나 저장되지 않으며, 페이지를 닫으면 사라집니다." },
+    { q: "변호사 없이 보내도 되나요?",
+      a: "네, 내용증명은 누구나 직접 작성해 보낼 수 있습니다. 다만 금액이 크거나 사실관계가 복잡한 사건, 상대방이 법률 대리인을 선임한 경우라면 발송 전에 변호사 상담을 받아 보시길 권합니다. 이 도구는 법률 자문이 아닌 참고용 양식을 제공합니다." },
+    { q: "몇 부를 준비해야 하나요?",
+      a: "우체국 방문 발송 시 동일한 문서 3부가 필요합니다(발송용·우체국 보관용·본인 보관용). 인터넷우체국으로 보내면 부수 준비 없이 텍스트만 붙여넣으면 됩니다." }
+  ];
+
+  renderVals() {
+    const open = this.state.open;
+    return {
+      faqs: this.faqData.map((f, i) => ({
+        q: f.q,
+        a: f.a,
+        open: i === open,
+        icon: i === open ? 'rotate(45deg)' : 'rotate(0deg)',
+        toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i }))
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

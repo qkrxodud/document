@@ -220,6 +220,164 @@
         ps.push("6. 만일 위 기한까지 지급되지 아니할 경우, 발신인은 관할 고용노동지청에 진정 및 고소를 제기하고, 민사상 임금 청구 소송(퇴직일로부터 14일 경과 시 근로기준법 제37조 소정의 연 20% 지연이자 포함)을 진행할 예정임을 알려드립니다.");
         return ps;
       }
+    },
+
+    renewal: {
+      label: "계약갱신요구권 행사",
+      emoji: "🔄",
+      sub: "전월세 계약을 연장하고 싶을 때",
+      subject: "임대차계약 갱신요구권 행사 통지의 건",
+      fields: [
+        { key: "propertyAddr", label: "임차 주택 주소", type: "text", required: true, placeholder: "서울특별시 ○○구 ○○로 12, 101동 1001호", full: true },
+        { key: "contractDate", label: "임대차계약 체결일", type: "date", required: true },
+        { key: "endDate", label: "임대차계약 만료일", type: "date", required: true },
+        { key: "deposit", label: "현재 보증금", type: "money", required: false },
+        { key: "monthlyRent", label: "현재 월 차임(월세)", type: "money", required: false, hint: "전세라면 비워 두세요." },
+        { key: "extra", label: "추가로 적을 내용", type: "textarea", required: false, placeholder: "이전에 구두나 문자로 갱신 의사를 전달한 내역이 있으면 적어 주세요.", full: true }
+      ],
+      build: function (d) {
+        var ps = [];
+        var terms = [];
+        if (d.deposit) terms.push("보증금 " + fmtMoney(d.deposit));
+        if (d.monthlyRent) terms.push("월 차임 " + fmtMoney(d.monthlyRent));
+        ps.push("1. 귀하의 평안을 기원합니다.");
+        ps.push("2. 발신인은 " + fmtDate(d.contractDate) + " 수신인과 사이에 「" + d.propertyAddr + "」 소재 주택에 관하여 " + (terms.length ? terms.join(", ") + ", " : "") + "임대차기간 만료일 " + fmtDate(d.endDate) + "로 하는 임대차계약을 체결하고 현재까지 거주하고 있는 임차인입니다.");
+        ps.push("3. 발신인은 본 통지서로써 주택임대차보호법 제6조의3에 따른 계약갱신요구권을 행사하여, 위 임대차계약을 종전과 동일한 조건으로 갱신할 것을 요구합니다. 본 통지는 임대차기간 만료 6개월 전부터 2개월 전까지 사이에 이루어지는 적법한 갱신요구입니다." + (d.extra ? " " + d.extra : ""));
+        ps.push("4. 주택임대차보호법 제6조의3 제1항에 따라 임대인은 같은 항 각 호의 정당한 사유(임대인 본인의 실거주 등)가 없는 한 임차인의 갱신요구를 거절할 수 없으며, 갱신되는 임대차의 차임과 보증금 증액은 같은 법 제7조에 따라 약정 차임 등의 20분의 1(5%)을 초과할 수 없습니다.");
+        ps.push("5. 본 통지서는 갱신요구권 행사 사실과 그 시점을 증명하기 위한 것이니, 갱신 조건에 관하여 협의할 사항이 있으시면 발신인에게 연락하여 주시기 바랍니다.");
+        return ps;
+      }
+    },
+
+    rent: {
+      label: "월세 미납 독촉 (임대인용)",
+      emoji: "🧾",
+      sub: "임차인이 월세를 연체할 때",
+      subject: "연체 차임 지급 청구 및 계약 해지 예고의 건",
+      fields: [
+        { key: "propertyAddr", label: "임대 주택(상가) 주소", type: "text", required: true, placeholder: "서울특별시 ○○구 ○○로 12, 101동 1001호", full: true },
+        { key: "contractDate", label: "임대차계약 체결일", type: "date", required: true },
+        { key: "monthlyRent", label: "월 차임(월세)", type: "money", required: true, placeholder: "800000" },
+        { key: "overdueDetail", label: "연체 내역", type: "textarea", required: true, placeholder: "예) 2026년 4월분, 5월분 차임 합계 2개월분 연체", full: true },
+        { key: "overdueAmount", label: "연체 차임 합계", type: "money", required: true },
+        { key: "deadline", label: "지급 요청 기한", type: "date", required: true },
+        { key: "account", label: "지급받을 계좌", type: "text", required: false, placeholder: "○○은행 000-0000-0000 (예금주: 홍길동)", full: true }
+      ],
+      build: function (d) {
+        var ps = [];
+        ps.push("1. 귀하의 평안을 기원합니다.");
+        ps.push("2. 발신인은 " + fmtDate(d.contractDate) + " 수신인과 사이에 「" + d.propertyAddr + "」에 관하여 월 차임 " + fmtMoney(d.monthlyRent) + "으로 하는 임대차계약을 체결한 임대인입니다.");
+        ps.push("3. 그러나 수신인은 아래와 같이 차임 합계 " + fmtMoney(d.overdueAmount) + "을 연체하고 있습니다.\n※ 연체 내역: " + d.overdueDetail);
+        var p4 = "4. 이에 발신인은 수신인에게 " + fmtDate(d.deadline) + "까지 위 연체 차임 전액을 지급하여 줄 것을 최고합니다.";
+        if (d.account) p4 += "\n※ 지급 계좌: " + d.account;
+        ps.push(p4);
+        ps.push("5. 민법 제640조에 따라 임차인의 차임 연체액이 2기의 차임액에 달하는 때에는 임대인은 임대차계약을 해지할 수 있습니다. 위 기한까지 연체 차임이 지급되지 아니할 경우 발신인은 별도의 통지로 임대차계약을 해지하고, 건물 명도 청구 및 연체 차임·손해배상 청구 등 법적 절차를 진행할 예정임을 알려드립니다.");
+        return ps;
+      }
+    },
+
+    invoice: {
+      label: "용역대금(외주비) 청구",
+      emoji: "🖥️",
+      sub: "작업을 끝냈는데 대금을 못 받을 때",
+      subject: "용역대금 지급 청구의 건",
+      fields: [
+        { key: "workName", label: "용역(작업) 내용", type: "text", required: true, placeholder: "홈페이지 디자인 및 개발, 영상 편집 등", full: true },
+        { key: "contractDate", label: "계약(의뢰)일", type: "date", required: true },
+        { key: "doneDate", label: "용역 완료(납품)일", type: "date", required: true },
+        { key: "amount", label: "미지급 대금", type: "money", required: true },
+        { key: "deadline", label: "지급 요청 기한", type: "date", required: true },
+        { key: "account", label: "지급받을 계좌", type: "text", required: false, placeholder: "○○은행 000-0000-0000 (예금주: 홍길동)", full: true },
+        { key: "extra", label: "추가로 적을 내용", type: "textarea", required: false, placeholder: "계약금 수령 여부, 지급 약속을 미룬 경위 등을 적어 주세요.", full: true }
+      ],
+      build: function (d) {
+        var ps = [];
+        ps.push("1. 귀사의(귀하의) 무궁한 발전을 기원합니다.");
+        ps.push("2. 발신인은 " + fmtDate(d.contractDate) + " 수신인으로부터 「" + d.workName + "」 용역을 의뢰받아 " + fmtDate(d.doneDate) + " 이를 완료하여 납품하였습니다.");
+        ps.push("3. 그러나 수신인은 용역이 완료되었음에도 현재까지 그 대금 " + fmtMoney(d.amount) + "을 지급하지 아니하고 있습니다." + (d.extra ? " " + d.extra : ""));
+        var p4 = "4. 이에 발신인은 수신인에게 " + fmtDate(d.deadline) + "까지 위 용역대금 " + fmtMoney(d.amount) + " 전액을 지급하여 줄 것을 청구합니다.";
+        if (d.account) p4 += "\n※ 지급 계좌: " + d.account;
+        ps.push(p4);
+        ps.push("5. 만일 위 기한까지 지급되지 아니할 경우, 발신인은 지급명령 신청 또는 용역대금 청구 소송을 제기할 것이며, 이 경우 상법 소정의 지연이자 및 소송비용 일체를 함께 청구할 예정임을 알려드립니다.");
+        return ps;
+      }
+    },
+
+    refund: {
+      label: "환불 청구",
+      emoji: "💳",
+      sub: "학원·헬스장 등 환불을 거부당할 때",
+      subject: "계약 해지에 따른 환불 청구의 건",
+      fields: [
+        { key: "serviceName", label: "서비스(상품)명", type: "text", required: true, placeholder: "○○헬스장 12개월 회원권, ○○학원 3개월 수강권 등", full: true },
+        { key: "payDate", label: "결제일", type: "date", required: true },
+        { key: "paidAmount", label: "결제 금액", type: "money", required: true },
+        { key: "reason", label: "해지·환불 사유", type: "textarea", required: true, placeholder: "예) 이사로 인해 더 이상 이용이 불가능하여 5월 1일 해지를 요청했으나 환불을 거부당했습니다.", full: true },
+        { key: "refundAmount", label: "요구 환불액", type: "money", required: false, hint: "이용 일수 공제 후 금액을 알면 적어 주세요." },
+        { key: "deadline", label: "환불 요청 기한", type: "date", required: true },
+        { key: "account", label: "환불받을 계좌", type: "text", required: false, placeholder: "○○은행 000-0000-0000 (예금주: 홍길동)", full: true }
+      ],
+      build: function (d) {
+        var ps = [];
+        ps.push("1. 귀사의 무궁한 발전을 기원합니다.");
+        ps.push("2. 발신인은 " + fmtDate(d.payDate) + " 수신인에게 「" + d.serviceName + "」 대금으로 " + fmtMoney(d.paidAmount) + "을 결제한 소비자입니다.");
+        ps.push("3. 발신인은 다음과 같은 사유로 위 계약의 해지와 환불을 요청하였으나 정당한 처리가 이루어지지 않고 있습니다.\n" + d.reason);
+        ps.push("4. 방문판매 등에 관한 법률, 할부거래에 관한 법률 및 공정거래위원회 고시 「소비자분쟁해결기준」에 따라 소비자는 계속거래 계약을 중도에 해지할 수 있고, 사업자는 이용 일수에 해당하는 금액과 법정 위약금을 공제한 잔액을 환급할 의무가 있습니다.");
+        var p5 = "5. 이에 발신인은 수신인에게 " + fmtDate(d.deadline) + "까지 " + (d.refundAmount ? "환불금 " + fmtMoney(d.refundAmount) : "관련 기준에 따라 정산한 환불금") + "을 지급하여 줄 것을 청구합니다.";
+        if (d.account) p5 += "\n※ 환불 계좌: " + d.account;
+        ps.push(p5);
+        ps.push("6. 만일 위 기한까지 환불이 이루어지지 아니할 경우, 발신인은 한국소비자원 피해구제 신청, 관할 지방자치단체 신고 및 민사소송 제기 등 가능한 모든 조치를 취할 예정임을 알려드립니다.");
+        return ps;
+      }
+    },
+
+    defame: {
+      label: "명예훼손 게시물 삭제 요청",
+      emoji: "🚫",
+      sub: "허위 게시글·악성 후기에 대응할 때",
+      subject: "명예훼손 게시물 삭제 및 게시 중단 요청의 건",
+      fields: [
+        { key: "postLocation", label: "게시물 위치(URL 등)", type: "text", required: true, placeholder: "https://cafe.naver.com/... 또는 ○○ 카페 자유게시판", full: true },
+        { key: "postDate", label: "게시일", type: "date", required: true },
+        { key: "postContent", label: "게시물 내용 요지", type: "textarea", required: true, placeholder: "예) 발신인이 운영하는 가게에 대하여 사실과 다른 위생 문제를 단정적으로 적시한 글", full: true },
+        { key: "deadline", label: "삭제 요청 기한", type: "date", required: true },
+        { key: "extra", label: "추가 요구사항", type: "textarea", required: false, placeholder: "정정문 게시, 재발 방지 약속 등 추가로 요구할 사항이 있으면 적어 주세요.", full: true }
+      ],
+      build: function (d) {
+        var ps = [];
+        ps.push("1. 귀하의 안녕을 기원합니다.");
+        ps.push("2. 수신인은 " + fmtDate(d.postDate) + " 「" + d.postLocation + "」에 발신인에 관한 게시물을 게시하였습니다.\n※ 게시물 요지: " + d.postContent);
+        ps.push("3. 위 게시물은 사실과 다르거나 발신인의 사회적 평가를 저하시키는 내용으로서, 발신인의 명예를 훼손하고 업무를 방해하는 것입니다. 이러한 행위는 형법 제307조(명예훼손) 및 정보통신망 이용촉진 및 정보보호 등에 관한 법률 제70조(허위사실 적시 시 7년 이하의 징역 등)에 해당할 수 있습니다.");
+        ps.push("4. 이에 발신인은 수신인에게 " + fmtDate(d.deadline) + "까지 위 게시물을 삭제하고 동일·유사한 내용의 게시를 중단하여 줄 것을 요청합니다." + (d.extra ? "\n※ 추가 요구사항: " + d.extra : ""));
+        ps.push("5. 만일 위 기한까지 조치가 이루어지지 아니할 경우, 발신인은 정보통신서비스 제공자에 대한 임시조치 요청(정보통신망법 제44조의2), 형사 고소 및 민사상 손해배상 청구 등 법적 절차를 진행할 예정임을 엄중히 통지합니다.");
+        return ps;
+      }
+    },
+
+    mistransfer: {
+      label: "착오송금 반환 청구",
+      emoji: "🏦",
+      sub: "잘못 보낸 돈을 돌려받아야 할 때",
+      subject: "착오송금액 반환 청구의 건",
+      fields: [
+        { key: "transferDate", label: "송금일", type: "date", required: true },
+        { key: "amount", label: "착오 송금액", type: "money", required: true },
+        { key: "bankInfo", label: "잘못 송금한 계좌", type: "text", required: true, placeholder: "○○은행 000-0000-0000 (예금주: 수신인)", full: true },
+        { key: "deadline", label: "반환 요청 기한", type: "date", required: true },
+        { key: "myAccount", label: "반환받을 계좌", type: "text", required: false, placeholder: "○○은행 000-0000-0000 (예금주: 홍길동)", full: true },
+        { key: "extra", label: "경위 보충", type: "textarea", required: false, placeholder: "은행을 통한 반환 요청 내역, 상대방과의 통화 내용 등이 있으면 적어 주세요.", full: true }
+      ],
+      build: function (d) {
+        var ps = [];
+        ps.push("1. 귀하의 안녕을 기원합니다.");
+        ps.push("2. 발신인은 " + fmtDate(d.transferDate) + " 착오로 인하여 수신인 명의의 계좌(" + d.bankInfo + ")로 " + fmtMoney(d.amount) + "을 잘못 송금하였습니다." + (d.extra ? " " + d.extra : ""));
+        ps.push("3. 수신인이 수령한 위 금원은 법률상 원인 없이 취득한 부당이득으로서, 민법 제741조에 따라 수신인은 이를 발신인에게 반환할 의무가 있습니다. 또한 판례는 착오로 송금된 돈임을 알면서 이를 임의로 소비하는 행위를 횡령죄로 처벌하고 있습니다.");
+        var p4 = "4. 이에 발신인은 수신인에게 " + fmtDate(d.deadline) + "까지 위 " + fmtMoney(d.amount) + "을 반환하여 줄 것을 청구합니다.";
+        if (d.myAccount) p4 += "\n※ 반환 계좌: " + d.myAccount;
+        ps.push(p4);
+        ps.push("5. 만일 위 기한까지 반환되지 아니할 경우, 발신인은 예금보험공사 착오송금 반환지원제도 이용, 부당이득반환 청구 소송 및 횡령죄 고소 등 법적 절차를 진행할 예정임을 알려드립니다.");
+        return ps;
+      }
     }
   };
 
