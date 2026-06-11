@@ -431,6 +431,59 @@ button { font-family: inherit; cursor: pointer; }
 
 .site-footer .container { display: flex; flex-direction: column; gap: 8px; }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-bottom: 4px;
+}
+
+.footer-links a { color: var(--ink-soft); font-weight: 600; }
+.footer-links a:hover { color: var(--accent-deep); text-decoration: underline; }
+
+/* ============================================
+   정책·소개 페이지 (privacy/terms/about/contact)
+   ============================================ */
+.legal-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+
+.legal-wrap h1 {
+  font-size: clamp(26px, 3.6vw, 34px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+.legal-date { color: var(--ink-mute); font-size: 14px; margin-bottom: 36px; }
+
+.legal-wrap h2 {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 36px 0 12px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.legal-wrap h2:first-of-type { border-top: none; padding-top: 0; }
+
+.legal-wrap p, .legal-wrap li { color: var(--ink-soft); margin-bottom: 10px; }
+
+.legal-wrap ul, .legal-wrap ol { padding-left: 22px; margin-bottom: 14px; }
+
+.legal-wrap a { color: var(--blue); text-decoration: underline; }
+
+.legal-box {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+
 /* ============================================
    마법사 (write.html)
    ============================================ */
