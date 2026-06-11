@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내용증명 작성하기 — 내용증명 작성 마법사</title>
+  <meta name="description" content="질문에 답하면 내용증명이 자동으로 완성됩니다. 입력 내용은 서버로 전송되지 않습니다.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2316233b'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23f3e9d5'>證</text></svg>">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html"><span class="seal">證</span>내용증명 마법사</a>
+      <nav class="header-nav">
+        <span class="hero-badge" style="margin:0">🔒 서버 전송 없음</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wizard-wrap">
+    <div class="progress" id="progress"></div>
+    <div class="panel" id="wizardPanel"></div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>⚠️ 본 문서는 법률 자문이 아닌 참고용 양식입니다. © 2026 내용증명 작성 마법사</p>
+    </div>
+  </footer>
+
+  <script src="assets/wizard.js"></script>
+</body>
+</html>
