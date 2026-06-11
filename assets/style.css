@@ -576,6 +576,19 @@ button { font-family: inherit; cursor: pointer; }
   align-items: flex-start;
 }
 
+.disclaimer .d-label {
+  flex-shrink: 0;
+  font-family: var(--font-doc);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--accent-deep);
+  border: 1px solid #ECD9B0;
+  border-radius: 6px;
+  padding: 2px 8px;
+  margin-top: 1px;
+}
+
 /* ---------- 푸터 ---------- */
 .site-footer {
   background: var(--ink-deep);
@@ -751,15 +764,22 @@ button { font-family: inherit; cursor: pointer; }
   transition: all 0.15s ease;
 }
 
-.case-option .emoji {
-  font-size: 22px;
+.case-option .cat {
+  font-family: var(--font-doc);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent);
   width: 44px;
   height: 44px;
   border-radius: 12px;
   background: var(--paper);
+  border: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  line-height: 1.25;
   flex-shrink: 0;
 }
 
@@ -767,7 +787,7 @@ button { font-family: inherit; cursor: pointer; }
 
 .case-option:hover { border-color: var(--ink-mute); }
 .case-option.selected { border-color: var(--ink); background: var(--paper-row); }
-.case-option.selected .emoji { background: var(--paper-deep); }
+.case-option.selected .cat { background: var(--ink); color: #fff; border-color: var(--ink); }
 
 /* 폼 */
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }

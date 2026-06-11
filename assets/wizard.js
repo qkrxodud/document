@@ -66,7 +66,7 @@
   var TEMPLATES = {
     jeonse: {
       label: "전세보증금 반환",
-      emoji: "🏠",
+      cat: "주거",
       sub: "보증금을 돌려주지 않을 때",
       subject: "임대차보증금 반환 청구의 건",
       fields: [
@@ -94,7 +94,7 @@
 
     fraud: {
       label: "중고거래 사기 대금 반환",
-      emoji: "📦",
+      cat: "거래",
       sub: "돈만 받고 물건을 보내지 않을 때",
       subject: "물품대금 반환 청구의 건",
       fields: [
@@ -121,7 +121,7 @@
 
     loan: {
       label: "빌려준 돈(대여금) 반환",
-      emoji: "💸",
+      cat: "금전",
       sub: "빌려준 돈을 갚지 않을 때",
       subject: "대여금 변제 최고의 건",
       fields: [
@@ -149,7 +149,7 @@
 
     terminate: {
       label: "계약 해지 통지",
-      emoji: "📄",
+      cat: "계약",
       sub: "계약을 해지하고 정산을 요구할 때",
       subject: "계약 해지 통지의 건",
       fields: [
@@ -173,7 +173,7 @@
 
     noise: {
       label: "층간소음 자제 요청",
-      emoji: "🔇",
+      cat: "생활",
       sub: "반복되는 소음 피해를 알릴 때",
       subject: "층간소음 피해에 따른 자제 요청의 건",
       fields: [
@@ -196,7 +196,7 @@
 
     wage: {
       label: "임금(급여) 체불 청구",
-      emoji: "💼",
+      cat: "노동",
       sub: "급여·퇴직금을 받지 못했을 때",
       subject: "체불임금 지급 청구의 건",
       fields: [
@@ -224,7 +224,7 @@
 
     renewal: {
       label: "계약갱신요구권 행사",
-      emoji: "🔄",
+      cat: "주거",
       sub: "전월세 계약을 연장하고 싶을 때",
       subject: "임대차계약 갱신요구권 행사 통지의 건",
       fields: [
@@ -251,7 +251,7 @@
 
     rent: {
       label: "월세 미납 독촉 (임대인용)",
-      emoji: "🧾",
+      cat: "임대",
       sub: "임차인이 월세를 연체할 때",
       subject: "연체 차임 지급 청구 및 계약 해지 예고의 건",
       fields: [
@@ -278,7 +278,7 @@
 
     invoice: {
       label: "용역대금(외주비) 청구",
-      emoji: "🖥️",
+      cat: "용역",
       sub: "작업을 끝냈는데 대금을 못 받을 때",
       subject: "용역대금 지급 청구의 건",
       fields: [
@@ -305,7 +305,7 @@
 
     refund: {
       label: "환불 청구",
-      emoji: "💳",
+      cat: "소비자",
       sub: "학원·헬스장 등 환불을 거부당할 때",
       subject: "계약 해지에 따른 환불 청구의 건",
       fields: [
@@ -333,7 +333,7 @@
 
     defame: {
       label: "명예훼손 게시물 삭제 요청",
-      emoji: "🚫",
+      cat: "명예",
       sub: "허위 게시글·악성 후기에 대응할 때",
       subject: "명예훼손 게시물 삭제 및 게시 중단 요청의 건",
       fields: [
@@ -356,7 +356,7 @@
 
     mistransfer: {
       label: "착오송금 반환 청구",
-      emoji: "🏦",
+      cat: "금전",
       sub: "잘못 보낸 돈을 돌려받아야 할 때",
       subject: "착오송금액 반환 청구의 건",
       fields: [
@@ -540,7 +540,7 @@
     Object.keys(TEMPLATES).forEach(function (key) {
       var t = TEMPLATES[key];
       html += '<button class="case-option' + (state.caseKey === key ? " selected" : "") + '" data-case="' + key + '">' +
-        '<span class="emoji">' + t.emoji + "</span>" +
+        '<span class="cat">' + t.cat + "</span>" +
         "<span>" + t.label + "<small>" + t.sub + "</small></span></button>";
     });
     html += "</div>";
@@ -585,7 +585,7 @@
   // 3단계: 사유별 세부 내용
   function renderStepDetail() {
     var t = TEMPLATES[state.caseKey];
-    var html = "<h2>" + t.emoji + " " + t.label + " — 세부 내용</h2>";
+    var html = "<h2>" + t.label + " — 세부 내용</h2>";
     html += '<p class="panel-desc">아래 내용을 바탕으로 본문이 자동으로 작성됩니다. 날짜와 금액은 정확하게 입력해 주세요.</p>';
     html += '<div class="form-grid">';
     t.fields.forEach(function (f) { html += renderField(f); });
@@ -663,17 +663,17 @@
     var html = "<h2>완성된 내용증명</h2>";
     html += '<p class="panel-desc">내용을 확인하고 PDF로 저장하세요. 수정이 필요하면 이전 단계로 돌아갈 수 있습니다.</p>';
     html += '<div class="preview-toolbar">' +
-      '<button class="btn btn-primary" id="btnPdf">🖨️ PDF로 저장 / 인쇄</button>' +
-      '<button class="btn btn-ghost" id="btnCopy">📋 전문 복사 (인터넷우체국용)</button>' +
-      '<button class="btn btn-ghost" id="btnTxt">⬇️ 텍스트 파일</button>' +
+      '<button class="btn btn-primary" id="btnPdf">PDF로 저장 / 인쇄</button>' +
+      '<button class="btn btn-ghost" id="btnCopy">전문 복사 (인터넷우체국용)</button>' +
+      '<button class="btn btn-ghost" id="btnTxt">텍스트 파일</button>' +
       "</div>";
     html += '<div class="doc-sheet" id="docSheet">' + buildDocHtml() + "</div>";
-    html += '<div class="next-steps"><strong>📮 다음 단계: 이렇게 발송하세요</strong><ol>' +
+    html += '<div class="next-steps"><strong>다음 단계 — 이렇게 발송하세요</strong><ol>' +
       "<li><b>우체국 방문</b> — 같은 문서를 3부 출력해 가져가면 1부는 발송, 1부는 우체국 보관, 1부는 본인 보관용으로 처리됩니다.</li>" +
       "<li><b>인터넷우체국</b> — epost.go.kr에서 '전 문 복사' 버튼으로 복사한 내용을 붙여넣으면 방문 없이 발송됩니다.</li>" +
       "<li>발송 후 받는 <b>등기번호</b>로 배달 여부를 꼭 확인하고, 영수증과 등본은 보관하세요.</li>" +
       "</ol></div>";
-    html += '<div class="disclaimer" style="margin-top:20px">⚠️<span>본 문서는 법률 자문이 아닌 <b>참고용 양식</b>입니다. 사안이 복잡하거나 금액이 크다면 변호사 등 전문가의 검토를 받으시길 권합니다.</span></div>';
+    html += '<div class="disclaimer" style="margin-top:20px"><b class="d-label">안내</b><span>본 문서는 법률 자문이 아닌 <b>참고용 양식</b>입니다. 사안이 복잡하거나 금액이 크다면 변호사 등 전문가의 검토를 받으시길 권합니다.</span></div>';
     html += navButtons({ back: true, next: null });
     $panel.innerHTML = html;
 
